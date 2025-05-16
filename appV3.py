@@ -51,7 +51,7 @@ If a question relates to any of these forbidden topics, politely decline to answ
 
 @app.route('/')
 def home():
-    return render_template('indexV2.html')
+    return render_template('index.html')
 
 @app.route('/send_message', methods=['POST'])
 def send_message():
