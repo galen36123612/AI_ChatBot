@@ -14,13 +14,17 @@ load_dotenv()
 import os
 
 # Set OpenAI API Key from environment variable
-#openai.api_key = "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"  # <-- 直接填入你的 OpenAI API Key
+
 
 app = Flask(__name__)
 CORS(app)
 
 # Initialize OpenAI client
-client = openai.OpenAI(api_key="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")
+# Get the API key from environment variables
+api_key = os.environ.get("OPENAI_API_KEY")
+
+# Create the client with the API key from environment variables
+client = openai.OpenAI(api_key=api_key)
 
 model="gpt-4o-mini"
 
