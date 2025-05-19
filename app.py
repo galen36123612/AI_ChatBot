@@ -31,7 +31,7 @@ model="gpt-4o-mini"
 assistant_id = "asst_TYb7aK6ahpIrREziIW7mFzil"
 thread_id = "thread_sfA5cNxkABXZmgvcL6AYjoVQ"
 
-instructions = : [
+instructions  : [
   "# 允許討論的主題",
   "- 益生菌：類型、功效、使用方法、研究、有效性",
   "- 健康補充品：類型、功效、使用建議、相關研究",
