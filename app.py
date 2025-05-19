@@ -75,10 +75,14 @@ def send_message():
         content=user_message
     )
 
+    client.beta.assistants.update(
+    assistant_id=assistant_id,
+    instructions=instructions
+    )
+
     run = client.beta.threads.runs.create(
         thread_id=thread_id,
         assistant_id=assistant_id,
-        instructions = instructions,
     )
 
     def wait_for_response():
