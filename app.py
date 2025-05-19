@@ -31,7 +31,7 @@ model="gpt-4o-mini"
 assistant_id = "asst_TYb7aK6ahpIrREziIW7mFzil"
 thread_id = "thread_sfA5cNxkABXZmgvcL6AYjoVQ"
 
-instructions  : [
+instructions = [
   "# 允許討論的主題",
   "- 益生菌：類型、功效、使用方法、研究、有效性",
   "- 健康補充品：類型、功效、使用建議、相關研究",
@@ -73,6 +73,9 @@ instructions  : [
   "- 如遇超出資料庫範圍的問題，回答「我不清楚你問的問題」"
 ]
 
+# 將列表轉換為字符串（API需要字符串格式）
+instructions_str = "\n".join(instructions)
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -89,7 +92,7 @@ def send_message():
 
     client.beta.assistants.update(
     assistant_id=assistant_id,
-    instructions=instructions
+    instructions=instructions_str
     )
 
     run = client.beta.threads.runs.create(
